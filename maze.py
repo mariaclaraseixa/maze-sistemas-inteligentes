@@ -71,8 +71,7 @@ class Maze:
         return self.get_cell(row, col) == WALL
 
     def is_path(self, row, col):
-        # Start and exit are also walkable cells
-        return self.get_cell(row, col) in (PATH, START, EXIT)
+        return self.get_cell(row, col) != WALL   # fora do grid já devolve WALL
 
     def get_start(self):
         return self._start
@@ -454,7 +453,7 @@ class PygameView:
                 elif event.key in (pg.K_1, pg.K_2):
                     method = 'bfs' if event.key == pg.K_1 else 'dfs'
                     path = maze.solve(method, on_step=self.update)
-                    pg.event.clear(pg.KEYDOWN)   # dro8p keys pressed during the animation
+                    pg.event.clear(pg.KEYDOWN)   # drop keys pressed during the animation
                     locked = True
                     self.show(maze, describe(method, path, maze) + "  (R restarts)")
                 elif event.key in keys and not locked:
