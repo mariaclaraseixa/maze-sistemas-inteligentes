@@ -1,4 +1,7 @@
-# Busca em largura (BFS) e em profundidade (DFS) em labirinto
+## Alunos: Maria Clara Scheffel e Miguel Bochi 
+
+
+ # Busca em largura (BFS) e em profundidade (DFS) em labirinto
 
 Implementação dos métodos de busca em largura e em profundidade para encontrar o caminho entre o início e a chegada de um labirinto.
 
